@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include "Event/WindowEvent.h"
 
 namespace Engine
 {
@@ -12,7 +13,10 @@ namespace Engine
 
 		void Run();
 
-		void Close();
+		void Close(WindowCloseEvent& e);
+
+	private:
+		void OnEvent(Event& e);
 
 	protected:
 		virtual void Init() = 0;
