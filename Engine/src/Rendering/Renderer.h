@@ -2,6 +2,10 @@
 
 #include <glad/glad.h>
 
+#include "VertexArray.h"
+#include "IndexBuffer.h"
+#include "Shader.h"
+
 namespace Engine
 {
 	class Renderer
@@ -11,6 +15,6 @@ namespace Engine
 		static void Shutdown();
 
 		static void BeginDraw();
-		static void Draw();
+		static void DrawIndexed(VertexArray& va, IndexBuffer& ib, Shader& shader);
 	};
 }

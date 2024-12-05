@@ -35,6 +35,8 @@ public:
 
 	void Render() override
 	{
+		Engine::Renderer::BeginDraw();
+		Engine::Renderer::DrawIndexed(*va, *ib, *shader);
 	}
 
 	void Shutdown() override

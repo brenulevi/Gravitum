@@ -42,6 +42,6 @@ namespace Engine
 	inline void BufferLayout::Push<float>(int size, bool normalized)
 	{
 		_elements.push_back({ size, GL_FLOAT, normalized, sizeof(float) });
-		_stride += sizeof(float);
+		_stride += size * sizeof(float);
 	}
 }

@@ -42,8 +42,6 @@ namespace Engine
 
 			Update();
 
-			glClear(GL_COLOR_BUFFER_BIT);
-
 			/* render */
 			Render();
 

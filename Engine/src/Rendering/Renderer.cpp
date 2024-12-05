@@ -8,7 +8,7 @@ namespace Engine
 	{
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
-			// Log error
+			// TODO: Error when initializing glad, log it
 			return false;
 		}
 
@@ -19,11 +19,16 @@ namespace Engine
 	{
 	}
 
-	void Renderer::BeginDraw()
+    void Renderer::BeginDraw()
 	{
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 
-	void Renderer::Draw()
+	void Renderer::DrawIndexed(VertexArray& va, IndexBuffer& ib, Shader& shader)
 	{
+		shader.Bind();
+		va.Bind();
+		ib.Bind();
+		glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, 0);
 	}
 }
